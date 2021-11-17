@@ -21,6 +21,11 @@ class Contact(models.Model):
     relation = models.CharField(max_length=50, blank=False, choices= RELATIONSHIP)
     created_on = models.DateTimeField( null=True, auto_now_add=True)
     image = models.ImageField(upload_to="images/", blank=True)
+
+
+    #Specify how Django should convert this contact object to human readable form at the admin interface
+    def __str__(self):
+        return self.name
     
 
 

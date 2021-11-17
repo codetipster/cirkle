@@ -11,7 +11,7 @@ def welcome(request):
 
 
 class Hello(View):
-    """ A class based view"""
+    """ A class based view without DRF"""
     #get all the contact in database
     contacts = Contact.objects.all()
     # contacts = Contact.objects.filter(property=True)=> returns all contact meeting criterion
