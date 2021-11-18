@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     #Installed
     'rest_framework',
+    'rest_framework.authtoken',
     'api',
 ]
 
