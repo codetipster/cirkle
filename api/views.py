@@ -6,6 +6,8 @@
 from api.serializer import ContactSerializer
 from .models import Contact
 from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
@@ -35,3 +37,5 @@ class ContactViewSet(viewsets.ModelViewSet):
     serializer_class = ContactSerializer
     #define the queryset
     queryset = Contact.objects.all()
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
