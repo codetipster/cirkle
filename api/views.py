@@ -12,12 +12,30 @@ from rest_framework.permissions import IsAuthenticated
 
 class ContactViewSet(viewsets.ModelViewSet):
     """Creating a DRF based view with viewsets from serializer"""
-    queryset = Contact.objects.all()
+    queryset = Contact.objects.all().order_by('name')
     serializer_class = ContactSerializer
 
     
 
-# Create your views here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # def welcome(request):
 #     """ A function based view without DRF"""

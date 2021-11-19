@@ -2,7 +2,7 @@
 from django.urls import path, include
 from . import views
 from .views import ContactViewSet
-from rest_framework.authtoken.views import obtain_auth_token
+# from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework import routers
 
 
