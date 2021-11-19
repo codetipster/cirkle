@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.contrib.admin.filters import ListFilter
-from .models import Contact
+from . import models
 
 # Register your models here.
-# admin.site.register(Contact)  #generic registration
+admin.site.register(models.UserProfile)  #generic registration
 
 #customize the registration
-@admin.register(Contact)
+@admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
     """ Customizes the admin view for our contact object fields"""
     # fieds = ["add fields"]
