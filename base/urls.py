@@ -7,5 +7,5 @@ urlpatterns = [
     #pointing django to our application urls in api
     path('api/', include('api.urls')),
     path('admin/', admin.site.urls),
-    path('auth/', obtain_auth_token)
+    path('auth/', obtain_auth_token),
 ]

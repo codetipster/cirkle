@@ -11,6 +11,6 @@ class ContactAdmin(admin.ModelAdmin):
     """ Customizes the admin view for our contact object fields"""
     # fieds = ["add fields"]
     list_display = ['name', 'phone_number', 'email']
-    list_filter = ['created_on', 'relation']
-    search_fields = ['name', 'relation']
+    list_filter = ['created_on']
+    search_fields = ['name', ]
 

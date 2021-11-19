@@ -9,6 +9,14 @@ from rest_framework import viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
+
+class ContactViewSet(viewsets.ModelViewSet):
+    """Creating a DRF based view with viewsets from serializer"""
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+
+    
+
 # Create your views here.
 
 # def welcome(request):
@@ -31,11 +39,10 @@ from rest_framework.permissions import IsAuthenticated
         
 #         return HttpResponse(self.message)
 
-class ContactViewSet(viewsets.ModelViewSet):
-    """Creating a DRF based view with viewsets from serializer"""
-    #what serializer should the viewset use?
-    serializer_class = ContactSerializer
-    #define the queryset
-    queryset = Contact.objects.all()
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+
+    # #what serializer should the viewset use?
+    # serializer_class = ContactSerializer
+    # #define the queryset
+    # queryset = Contact.objects.all()
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)

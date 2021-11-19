@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     #Installed
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework.permissions',
     'api',
 ]
 
@@ -79,7 +80,7 @@ DATABASES = {
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES' : (
-        'rest_framework.permission.AllowAny', #IsAuthenticated
+        'rest_framework.permissions.AllowAny', #IsAuthenticated
     )
 }
 
