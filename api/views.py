@@ -3,17 +3,26 @@
 # from django.views import View
 
 # from django.db.models.query import QuerySet
-from api.serializer import ContactSerializer
+from rest_framework import permissions
+from api.serializer import ContactSerializer, UserProfileSerializer
 from .models import Contact
 from rest_framework import viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from . models import UserProfile
 
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """Creates user registration for our application"""
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
     """Creating a DRF based view with viewsets from serializer"""
     queryset = Contact.objects.all().order_by('name')
     serializer_class = ContactSerializer
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (IsAuthenticated, )
 
     
 
